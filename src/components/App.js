@@ -17,7 +17,7 @@ constructor(props) {
     this.props.addReminder(this.state.text);
   }
 
-  deleteReminder() {
+  deleteReminder(id) {
     console.log('deleting in application', id);
     console.log('this.props', this.props);
   }
@@ -31,7 +31,10 @@ constructor(props) {
             return (
               <li key={reminder.id} className="list-group-item">
                 <div className="list-item">{reminder.text}</div>
-                <div className="list-item delete-button" onClick={() => this.deleteReminder(reminder.id)}>
+                <div 
+                  className="list-item delete-button" 
+                  onClick={() => this.deleteReminder(reminder.id)}
+                >
                   &#x2715;
                 </div>
               </li>
